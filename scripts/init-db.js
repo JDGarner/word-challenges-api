@@ -1,6 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
 
-const uri = "mongodb+srv://jamie:<password>@words-cluster-t5r9c.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://jamie:jamie-mongocloud@words-cluster-t5r9c.mongodb.net/test?retryWrites=true&w=majority";
 // const uri = "mongodb://localhost";
 
 // Option 1

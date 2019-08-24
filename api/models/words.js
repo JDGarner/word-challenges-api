@@ -11,4 +11,4 @@ const WordsSchema = mongoose.Schema({
   rhymes: [RhymesSchema]
 });
 
-module.exports = mongoose.model("Words", WordsSchema);
+module.exports = mongoose.model("words", WordsSchema);

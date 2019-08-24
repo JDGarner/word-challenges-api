@@ -1,0 +1,12 @@
+{
+  "name": "word-challenges-api",
+  "version": 2,
+  "builds": [{ "src": "/api/server.js", "use": "@now/node" }],
+  "routes": [
+    { "src": "/words", "dest": "/api/server.js" },
+    { "src": "/", "dest": "/api/server.js" }
+  ],
+  "env": {
+    "MONGODB_URI": "@mongodb-uri"
+  }
+}

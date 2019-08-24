@@ -1,6 +1,15 @@
 const express = require("express");
-const routes = require("./api/routes");
+const mongoose = require("mongoose");
+const routes = require("./routes");
+const BodyParser = require("body-parser");
+
+const uri = process.env.MONGODB_URI ? process.env.MONGODB_URI : "mongodb://localhost:27017/words";
+mongoose.connect(uri);
+
 const app = express();
+
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({ extended: true }));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
