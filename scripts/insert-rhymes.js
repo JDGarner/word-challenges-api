@@ -1,4 +1,3 @@
-const { Client } = require("pg");
 const fetch = require("node-fetch");
 const words = require("../data/common-words");
 const isWordDefined = require("./check-definition");

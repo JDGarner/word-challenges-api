@@ -1,5 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
 
+const uri = "mongodb+srv://jamie:<password>@words-cluster-t5r9c.mongodb.net/test?retryWrites=true&w=majority";
+// const uri = "mongodb://localhost";
+
 // Option 1
 // const rhymes = {
 //   list: {
@@ -25,7 +28,7 @@ const MongoClient = require("mongodb").MongoClient;
 const insertRhymesIntoDb = rhymes => {
   console.log(">>> Connecting to db");
 
-  MongoClient.connect("mongodb://localhost", { useNewUrlParser: true }, function(err, client) {
+  MongoClient.connect(uri, { useNewUrlParser: true }, function(err, client) {
     if (err) throw err;
 
     console.log(">>> Connected");
