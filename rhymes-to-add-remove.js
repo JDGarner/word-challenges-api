@@ -3,5 +3,6 @@ const add = {
 };
 
 const remove = {
-  list: ["crist", "vist"]
+  list: ["crist", "vist"],
+  air: ["blair"]
 };

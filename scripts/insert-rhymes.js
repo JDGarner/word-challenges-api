@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
-const words = require("../data/common-words");
+const words = require("../data/final-words");
 const isWordDefined = require("./check-definition");
-const insertRhymesIntoDb = require("./init-db");
+const { insertRhymesIntoDb } = require("./init-db");
 
 // - call https://www.datamuse.com/api/ (e.g. https://api.datamuse.com/words?rel_rhy=list)
 // - call API with each word, sort in order of most number of rhyming words
@@ -22,36 +22,60 @@ const filterUndefinedWords = async words => {
 };
 
 const getRhymesForWord = async word => {
-  try {
-    const url = `https://api.datamuse.com/words?rel_rhy=${word}`;
-    console.log("Getting rhymes for ", word);
-    const response = await fetch(url);
-    const json = await response.json();
-    const spacesFiltered = filterWordsWithSpaces(json);
+  return new Promise(async (resolve, reject) => {
+    try {
+      const url = `https://api.datamuse.com/words?rel_rhy=${word}`;
+      console.log("Getting rhymes for ", word, new Date());
+      const response = await fetch(url);
+      const json = await response.json();
+      const spacesFiltered = filterWordsWithSpaces(json);
 
-    const definedWords = await filterUndefinedWords(spacesFiltered);
-    console.log("Got ", definedWords.length, " rhymes for ", word);
-    // console.log("Rhymes ", definedWords);
+      const definedWords = await filterUndefinedWords(spacesFiltered);
+      console.log("Got ", definedWords.length, " rhymes for ", word);
+      // console.log("Rhymes ", definedWords);
 
-    return {
-      word,
-      rhymes: definedWords
-    };
-  } catch (error) {
-    console.log(error);
-  }
+      resolve({
+        word,
+        rhymes: definedWords
+      });
+    } catch (error) {
+      console.log(error);
+      reject(error);
+    }
+  });
 };
 
 const getRhymesForWords = async words => {
-  const promises = await words.map(word => getRhymesForWord(word));
-  console.log(">>> Got all rhymes, resolving promises");
-  const resolved = await Promise.all(promises);
+  const results = [];
 
-  console.log(">>> Inserting rhymes into db");
-  insertRhymesIntoDb(resolved);
+  function getAllRhymes(words) {
+    function delay(t, data) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          results.push(data);
+          resolve();
+        }, t);
+      });
+    }
+
+    let index = 0;
+    function next() {
+      if (index < words.length) {
+        return getRhymesForWord(words[index++]).then(function(data) {
+          return delay(200, data).then(next);
+        });
+      }
+    }
+
+    return Promise.resolve().then(next);
+  }
+
+  getAllRhymes(words).then(() => {
+    console.log(">>> Inserting rhymes into db");
+    insertRhymesIntoDb(results);
+  });
 };
 
-const words2 = ["list", "air", "face", "cow", "end", "find", "good", "have", "smash"];
-getRhymesForWords(words2);
+getRhymesForWords(words);
 
-// getRhymesForWord("list");
+// getRhymesForWords(["list", "air", "some"]);

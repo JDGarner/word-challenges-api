@@ -8,7 +8,6 @@ module.exports = [
   "abroad",
   "absence",
   "absolute",
-  "absolutely",
   "absorb",
   "abuse",
   "academic",
