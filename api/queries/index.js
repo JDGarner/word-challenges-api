@@ -1,12 +1,20 @@
-const Words = require("../models/words");
+const Rhymes = require("../models/rhymes");
 
-function getAllWords(req, res, next) {
-  Words.find((err, words) => {
+function getAllRhymes(req, res, next) {
+  Rhymes.find((err, rhymes) => {
     if (err) res.send(err);
-    res.json(words);
+    res.json(rhymes);
+  });
+}
+
+function getRandomRhymes(req, res, next) {
+  Rhymes.aggregate([{ $sample: { size: 10 } }], (err, rhymes) => {
+    if (err) res.send(err);
+    res.json(rhymes);
   });
 }
 
 module.exports = {
-  getAllWords: getAllWords
+  getAllRhymes: getAllRhymes,
+  getRandomRhymes: getRandomRhymes
 };
