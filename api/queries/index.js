@@ -8,7 +8,7 @@ function getAllRhymes(req, res, next) {
 }
 
 function getRandomRhymes(req, res, next) {
-  Rhymes.aggregate([{ $sample: { size: 10 } }], (err, rhymes) => {
+  Rhymes.aggregate([{ $sample: { size: 25 } }], (err, rhymes) => {
     if (err) res.send(err);
     res.json(rhymes);
   });

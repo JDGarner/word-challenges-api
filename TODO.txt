@@ -1,4 +1,6 @@
+- load test api
 - make sure only I can call api
+
 
 Ideas:
 - http://www.manythings.org/vocabulary/lists/l/words.php?f=ogden-qualities
