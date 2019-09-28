@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
-const words = require("../data/final-words");
+const words = require("../../data/rhymes/final-words");
 const isWordDefined = require("./check-definition");
-const { insertRhymesIntoDb } = require("./init-db");
+const { insertRhymesIntoDb } = require("./insert-rhymes-into-db");
 
 // - call https://www.datamuse.com/api/ (e.g. https://api.datamuse.com/words?rel_rhy=list)
 // - call API with each word, sort in order of most number of rhyming words

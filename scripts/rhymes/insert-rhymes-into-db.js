@@ -1,5 +1,5 @@
 const MongoClient = require("mongodb").MongoClient;
-const uri = require("../uri");
+const uri = require("../../uri");
 
 // const uri = "mongodb://localhost";
 

@@ -1,8 +1,13 @@
 const add = {
-  list: ["tryst"]
+  hit: ["git"],
+  goes: ["snows"],
+  one: ["gone", "on"],
 };
 
 const remove = {
   list: ["crist", "vist"],
-  air: ["blair"]
+  air: ["blair"],
+  program: ["sam"]
 };
+
+const removeWord = ["determine"];
