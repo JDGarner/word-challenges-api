@@ -5,6 +5,7 @@
 - load test api
 - make sure only I can call api
 
+- automate db backup
 
 Ideas:
 - http://www.manythings.org/vocabulary/lists/l/words.php?f=ogden-qualities

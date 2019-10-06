@@ -5,6 +5,8 @@
   "routes": [
     { "src": "/random-rhymes", "dest": "/api/server.js" },
     { "src": "/rhymes", "dest": "/api/server.js" },
+    { "src": "/random-definitions", "dest": "/api/server.js" },
+    { "src": "/definitions", "dest": "/api/server.js" },
     { "src": "/", "dest": "/api/server.js" }
   ],
   "env": {
