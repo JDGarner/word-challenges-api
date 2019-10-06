@@ -1,3 +1,7 @@
+- add easy definitions
+- add hard definitions
+- backup db locally
+
 - load test api
 - make sure only I can call api
 

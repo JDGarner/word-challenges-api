@@ -1,3 +1,4 @@
+// Datamuse:
 // https://api.datamuse.com/words?sp=sessile&md=d
 // get first item in array
 // get first definition
@@ -5,14 +6,16 @@
 // insert into db
 
 const fetch = require("node-fetch");
+const capitalize = require("lodash").capitalize;
 // const words = require("../../data/rhymes/final-words");
 // const { insertDefinitionsIntoDb } = require("./insert-definitions-into-db");
 
 const getDefinition = result => {
-  if (result && result[0] && result[0].defs && result[0].defs[1]) {
+  if (result && result[0] && result[0].defs && result[0].defs[0]) {
     let definition = result[0].defs[1];
     definition = definition.split(" ");
     definition.shift();
+    definition[0] = capitalize(definition[0]);
     return definition.join(" ");
   }
 
