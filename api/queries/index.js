@@ -9,7 +9,7 @@ function getAllRhymes(req, res, next) {
 }
 
 function getRandomRhymes(req, res, next) {
-  Rhymes.aggregate([{ $sample: { size: 25 } }], (err, rhymes) => {
+  Rhymes.aggregate([{ $sample: { size: 80 } }], (err, rhymes) => {
     if (err) res.send(err);
     res.json(rhymes);
   });
@@ -23,7 +23,7 @@ function getAllDefinitions(req, res, next) {
 }
 
 function getRandomDefinitions(req, res, next) {
-  Definitions.aggregate([{ $sample: { size: 25 } }], (err, definitions) => {
+  Definitions.aggregate([{ $sample: { size: 80 } }], (err, definitions) => {
     if (err) res.send(err);
     res.json(definitions);
   });
