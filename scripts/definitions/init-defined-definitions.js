@@ -5,4 +5,4 @@ const {
 } = require("./insert-definitions-into-db");
 
 // insertDefinitionsIntoDb(definedHardWords, "hard");
-insertDefinitionsIntoDbReset(definedHardWords, "hard");
+// insertDefinitionsIntoDbReset(definedHardWords, "hard");

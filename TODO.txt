@@ -1,6 +1,7 @@
+
+- backup db locally - write script to do this
 - add easy definitions
-- add hard definitions
-- backup db locally
+- tweak/check definitions
 
 - load test api
 - make sure only I can call api
@@ -9,3 +10,4 @@
 
 Ideas:
 - http://www.manythings.org/vocabulary/lists/l/words.php?f=ogden-qualities
+

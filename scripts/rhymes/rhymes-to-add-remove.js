@@ -2,6 +2,7 @@ const add = {
   hit: ["git"],
   goes: ["snows"],
   one: ["gone", "on"],
+  straight: ["hate"]
 };
 
 const remove = {
