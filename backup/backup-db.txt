@@ -1,0 +1,7 @@
+mongo "mongodb+srv://words-cluster-t5r9c.mongodb.net/test"  --username jamie
+
+use words
+db.definitions.find().toArray()
+db.rhymes.find().toArray()
+
+// Copy to text file, save to dropbox

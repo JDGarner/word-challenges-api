@@ -10,6 +10,7 @@
     { "src": "/", "dest": "/api/server.js" }
   ],
   "env": {
-    "MONGODB_URI": "@mongodb-uri"
+    "MONGODB_URI": "@mongodb_uri",
+    "WORDS_API_KEY": "@words_api_key"
   }
 }

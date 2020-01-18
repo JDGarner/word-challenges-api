@@ -1,12 +1,19 @@
 
-- backup db locally - write script to do this
+Security:
+- add api key to app
+- send api key on requests (on custom header?)
+- decrypt key on server, on receiving requests
+- if key is incorrect then reject
+
 - add easy definitions
 - tweak/check definitions
 
-- load test api
-- make sure only I can call api
+- make prod environment, setup on app different env variables for prod/dev
+- look into AWS - https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
 
-- automate db backup
+- load test api
+
+- look into ddos protection/general api security methods
 
 Ideas:
 - http://www.manythings.org/vocabulary/lists/l/words.php?f=ogden-qualities
