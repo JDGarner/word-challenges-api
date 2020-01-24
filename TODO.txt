@@ -9,6 +9,7 @@ Security:
 - tweak/check definitions
 
 - make prod environment, setup on app different env variables for prod/dev
+  - when adding prod, will need to add thing for react native config to android (see github page)
 - look into AWS - https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
 
 - load test api
