@@ -17,6 +17,13 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(function(req, res, next) {
+  if (req.headers.authorization !== process.env.WORDS_API_KEY) {
+    return res.status(403).json({ error: '403 Forbidden' });
+  }
+  next();
+});
+
 app.use("/", routes);
 
 const port = process.env.PORT || "3001";

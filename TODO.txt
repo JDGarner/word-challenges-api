@@ -4,6 +4,7 @@ Security:
 - send api key on requests (on custom header?)
 - decrypt key on server, on receiving requests
 - if key is incorrect then reject
+- allow cross origin??
 
 - add easy definitions
 - tweak/check definitions
