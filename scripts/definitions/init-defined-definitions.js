@@ -1,8 +1,8 @@
-const definedHardWords = require("../../data/definitions/hard-words").definedHardWords;
-const {
-  insertDefinitionsIntoDb,
-  insertDefinitionsIntoDbReset
-} = require("./insert-definitions-into-db");
+// const definedHardWords = require("../../data/definitions/hard-words")
+//   .definedHardWords;
+const easyDefinedWords = require("../../data/definitions/easy-words")
+  .easyDefinedWords;
+const { insertDefinitionsIntoDb } = require("./insert-definitions-into-db");
 
 // insertDefinitionsIntoDb(definedHardWords, "hard");
-// insertDefinitionsIntoDbReset(definedHardWords, "hard");
+insertDefinitionsIntoDb(easyDefinedWords, "easy");

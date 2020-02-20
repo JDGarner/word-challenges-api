@@ -3,10 +3,9 @@
   "version": 2,
   "builds": [{ "src": "/api/server.js", "use": "@now/node" }],
   "routes": [
-    { "src": "/random-rhymes", "dest": "/api/server.js" },
     { "src": "/rhymes", "dest": "/api/server.js" },
-    { "src": "/random-definitions", "dest": "/api/server.js" },
-    { "src": "/definitions", "dest": "/api/server.js" },
+    { "src": "/easy-definitions", "dest": "/api/server.js" },
+    { "src": "/hard-definitions", "dest": "/api/server.js" },
     { "src": "/", "dest": "/api/server.js" }
   ],
   "env": {

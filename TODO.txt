@@ -1,16 +1,18 @@
 
 Security:
-- allow cross origin??
-- add easy definitions
+
+- add more easy definitions
 - tweak/check definitions
 
 - make prod environment, setup on app different env variables for prod/dev
   - when adding prod, will need to add thing for react native config to android (see github page)
 - look into AWS - https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
+- decide on DB hosting - mongo cloud or digital ocean or ??, dokku?, netlify?
 
 - load test api
 
 - look into ddos protection/general api security methods
+- research cors for mobile apps
 
 Ideas:
 - http://www.manythings.org/vocabulary/lists/l/words.php?f=ogden-qualities
