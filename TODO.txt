@@ -1,8 +1,13 @@
 
-Security:
+Words to add:
+- assuage
+
+Words to tweak:
+- sociable
+- weather - "To face and withstand with courage/to bear up against and come safely through"
 
 - add more easy definitions
-- tweak/check definitions
+- tweak/check more definitions:
 
 - make prod environment, setup on app different env variables for prod/dev
   - when adding prod, will need to add thing for react native config to android (see github page)
