@@ -1,7 +1,8 @@
 const fetch = require("node-fetch");
-const words = require("../../data/rhymes/final-words");
+// const words = require("../../data/rhymes/final-words");
 const isWordDefined = require("./check-definition");
 const { insertRhymesIntoDb } = require("./insert-rhymes-into-db");
+const { wordsToRedo } = require("./words-to-change");
 
 // - call https://www.datamuse.com/api/ (e.g. https://api.datamuse.com/words?rel_rhy=list)
 // - call API with each word, sort in order of most number of rhyming words
@@ -24,7 +25,7 @@ const filterUndefinedWords = async words => {
 const getRhymesForWord = async word => {
   return new Promise(async (resolve, reject) => {
     try {
-      const url = `https://api.datamuse.com/words?rel_rhy=${word}`;
+      const url = `https://api.datamuse.com/words?rel_rhy=${word}&max=1000`;
       console.log("Getting rhymes for ", word, new Date());
       const response = await fetch(url);
       const json = await response.json();
@@ -76,6 +77,6 @@ const getRhymesForWords = async words => {
   });
 };
 
-getRhymesForWords(words);
+getRhymesForWords(wordsToRedo);
 
 // getRhymesForWords(["list", "air", "some"]);

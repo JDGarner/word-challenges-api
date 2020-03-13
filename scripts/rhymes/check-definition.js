@@ -4,7 +4,7 @@ const { promisify } = require("util");
 
 const readFile = promisify(fs.readFile);
 
-const dictionaryPath = path.resolve(__dirname, "../../data/all-words.txt");
+const dictionaryPath = path.resolve(__dirname, "../../data/rhymes/all-words.txt");
 
 const isWordDefined = async word => {
   try {

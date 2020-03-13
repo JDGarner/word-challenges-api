@@ -1,13 +1,14 @@
-
-Words to add:
-- assuage
-
+Definitions:
 Words to tweak:
-- sociable
-- weather - "To face and withstand with courage/to bear up against and come safely through"
+  - sociable
+  - weather - "To face and withstand with courage/to bear up against and come safely through"
+  - time
+- Add more easy definitions
+- Tweak/check more definitions
 
-- add more easy definitions
-- tweak/check more definitions:
+Rhymes:
+- Recheck ranges to check difficulty ranges again
+- Remove score and numSyllables fields
 
 - make prod environment, setup on app different env variables for prod/dev
   - when adding prod, will need to add thing for react native config to android (see github page)
