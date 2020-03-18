@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
 
 const RhymeSchema = mongoose.Schema({
-  word: String,
-  score: Number,
-  numSyllables: Number
+  word: String
 });
 
 const RhymesSchema = mongoose.Schema({
   word: String,
-  rhymes: [RhymeSchema]
+  rhymes: [RhymeSchema],
+  difficulty: String
 });
 
 module.exports = mongoose.model("rhymes", RhymesSchema);

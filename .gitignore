@@ -2,3 +2,4 @@ node_modules/**/*
 dump/
 uri.js
 scripts/definitions/init-definitions-oxford.js
+.now

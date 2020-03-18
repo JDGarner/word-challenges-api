@@ -1,5 +1,4 @@
 {
-  "name": "word-challenges-api",
   "version": 2,
   "builds": [{ "src": "/api/server.js", "use": "@now/node" }],
   "routes": [

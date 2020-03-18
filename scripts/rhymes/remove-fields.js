@@ -1,0 +1,1 @@
+db.rhymes.find({}).forEach(function(doc) { var rhymes = doc.rhymes; for(var i = 0; i < rhymes.length; i++) { var x = rhymes[i]; delete (x["score"]); delete (x["numSyllables"]); } db.rhymes.save(doc); });
