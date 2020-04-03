@@ -5,6 +5,7 @@
     { "src": "/rhymes", "dest": "/api/server.js" },
     { "src": "/easy-definitions", "dest": "/api/server.js" },
     { "src": "/hard-definitions", "dest": "/api/server.js" },
+    { "src": "/definition-elo", "dest": "/api/server.js" },
     { "src": "/", "dest": "/api/server.js" }
   ],
   "env": {

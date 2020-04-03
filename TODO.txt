@@ -1,8 +1,11 @@
 Definitions:
 Words to tweak:
-- Fix Chimera definitions, remove Manichean
+- Fix Chimera definitions, remove Manichean, Behaviour
 - Add more easy definitions
 - Tweak/check more definitions
+  - Add Precious "Something very special and important, e.g. a magical gold ring"
+
+Add limiting ranges to elo post route
 
 Rhymes:
 - Remove common

@@ -52,8 +52,23 @@ function getRandomHardDefinitions(req, res, next) {
   );
 }
 
+function setDefinitionELO(req, res, next) {
+  const { word, elo } = req.body;
+
+  // TODO: set limits per difficulty
+
+  Definitions.update({ word }, { $set: { eloRating: elo } }, err => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(200);
+    }
+  });
+}
+
 module.exports = {
   getRandomRhymes: getRandomRhymes,
   getRandomEasyDefinitions: getRandomEasyDefinitions,
-  getRandomHardDefinitions: getRandomHardDefinitions
+  getRandomHardDefinitions: getRandomHardDefinitions,
+  setDefinitionELO: setDefinitionELO
 };
