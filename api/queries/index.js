@@ -64,9 +64,22 @@ function setDefinitionELO(req, res, next) {
   });
 }
 
+function setRhymeELO(req, res, next) {
+  const { word, elo } = req.body;
+
+  Rhymes.update({ word }, { $set: { eloRating: elo } }, err => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(200);
+    }
+  });
+}
+
 module.exports = {
   getRandomRhymes: getRandomRhymes,
   getRandomEasyDefinitions: getRandomEasyDefinitions,
   getRandomHardDefinitions: getRandomHardDefinitions,
-  setDefinitionELO: setDefinitionELO
+  setDefinitionELO: setDefinitionELO,
+  setRhymeELO: setRhymeELO
 };
