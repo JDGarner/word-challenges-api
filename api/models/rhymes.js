@@ -7,7 +7,8 @@ const RhymeSchema = mongoose.Schema({
 const RhymesSchema = mongoose.Schema({
   word: String,
   rhymes: [RhymeSchema],
-  difficulty: String
+  difficulty: String,
+  eloRating: Number
 });
 
 module.exports = mongoose.model("rhymes", RhymesSchema);
