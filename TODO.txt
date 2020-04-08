@@ -5,17 +5,9 @@ Words to tweak:
 - Tweak/check more definitions
   - Add Precious "Something very special and important, e.g. a magical gold ring"
 
-Add limiting ranges to elo post route
-
 - Backup, create backup system? (will depend on hosting choice)
 
 Rhymes:
-- find correct english language words file
-- re-filter
-- then re check the ranges/master difficulties/elos
-- backup
-- Remove common, father ?
-
 - Handle UK and US Spelling?
 - make prod environment, setup on app different env variables for prod/dev
   - when adding prod, will need to add thing for react native config to android (see github page)

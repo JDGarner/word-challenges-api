@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const words = require("../../data/rhymes/final-words");
 const isWordDefined = require("./check-definition");
-const { insertRhymesIntoDb } = require("./insert-rhymes-into-db");
+const { insertRhymesIntoDb, insertRhymesIntoDbFirstTime } = require("./insert-rhymes-into-db");
 // const { wordsToRedo } = require("./words-to-change");
 
 // - call https://www.datamuse.com/api/ (e.g. https://api.datamuse.com/words?rel_rhy=list)
