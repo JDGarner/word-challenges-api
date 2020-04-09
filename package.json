@@ -8,6 +8,9 @@
     "start": "node api/server.js",
     "build": "yarn install"
   },
+  "engines": {
+    "node": "13.8.x"
+  },
   "devDependencies": {
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1"

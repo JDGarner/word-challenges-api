@@ -1,11 +1,14 @@
-General:
-- set up branches and env variables first
+- set up branches and env variables
   - will need to add thing for react native config to android (see github page)
 
-- Make Prod env using netlify, master branch, what DB?
+General:
+- Deploy prod version on heroku free tier
+- Hook up to new DB? - another atlas db or mlab
+
+- Make Prod env using heroku, master branch, what DB?
 - Dev account using zeit, develop branch, mongo cloud db
 
-- decide on DB hosting - mongo cloud or digital ocean or ??, dokku?, netlify?
+- decide on DB hosting - mongo cloud or ??
 
 - Backup, create backup system? (will depend on hosting choice)
 
