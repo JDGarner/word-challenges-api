@@ -1,5 +1,6 @@
 node_modules/**/*
 dump/
+backup/rhymes-backup.js
 uri.js
 scripts/definitions/init-definitions-oxford.js
 .now
