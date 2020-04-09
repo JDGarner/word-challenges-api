@@ -1,4 +1,4 @@
-node_modules/**/*
+node_modules
 dump/
 backup/rhymes-backup.js
 uri.js
