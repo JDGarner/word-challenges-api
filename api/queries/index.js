@@ -5,12 +5,15 @@ const RHYME_RESPONSE_SIZE = 25;
 const DEFINITION_RESPONSE_SIZE = 80;
 
 function getRhymesForDifficulty(difficulty) {
+  console.log(">>> getRhymesForDifficulty: ", difficulty);
   return new Promise((resolve, reject) => {
     Rhymes.aggregate(
       [{ $match: { difficulty } }, { $sample: { size: RHYME_RESPONSE_SIZE } }],
       (err, rhymes) => {
+        console.log(">>> getRhymesForDifficulty ERROR: ", err);
         if (err) reject(err);
 
+        console.log(">>> getRhymesForDifficulty SUCCESS: ", rhymes);
         resolve(rhymes);
       }
     );
