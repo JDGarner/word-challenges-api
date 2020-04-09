@@ -5,12 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon api/server.js",
-    "start": "node api/server.js",
-    "build": "yarn install"
+    "start": "node api/server.js"
   },
   "engines": {
-    "node": "12.x",
-    "yarn": "1.21.x"
+    "node": "12.x"
   },
   "devDependencies": {
     "node-fetch": "^2.6.0",
