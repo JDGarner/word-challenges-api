@@ -9,7 +9,9 @@
     "build": "yarn install"
   },
   "engines": {
-    "node": "13.8.x"
+    "node": "13.8.x",
+    "npm": "6.13.x",
+    "yarn": "1.21.x"
   },
   "devDependencies": {
     "node-fetch": "^2.6.0",
