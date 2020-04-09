@@ -1,3 +1,19 @@
+General:
+- set up branches and env variables first
+  - will need to add thing for react native config to android (see github page)
+
+- Make Prod env using netlify, master branch, what DB?
+- Dev account using zeit, develop branch, mongo cloud db
+
+- decide on DB hosting - mongo cloud or digital ocean or ??, dokku?, netlify?
+
+- Backup, create backup system? (will depend on hosting choice)
+
+- load test api/or calculate how many users i might be able to have given bandwidth
+- look into ddos protection/general api security methods
+- research cors for mobile apps
+
+
 Definitions:
 Words to tweak:
 - Fix Chimera definitions, remove Manichean, Behaviour
@@ -5,20 +21,10 @@ Words to tweak:
 - Tweak/check more definitions
   - Add Precious "Something very special and important, e.g. a magical gold ring"
 
-- Backup, create backup system? (will depend on hosting choice)
 
 Rhymes:
 - Handle UK and US Spelling?
-- make prod environment, setup on app different env variables for prod/dev
-  - when adding prod, will need to add thing for react native config to android (see github page)
-- look into AWS - https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
-- decide on DB hosting - mongo cloud or digital ocean or ??, dokku?, netlify?
-  (could use now as dev env?)
 
-- load test api
-
-- look into ddos protection/general api security methods
-- research cors for mobile apps
 
 Ideas:
 - http://www.manythings.org/vocabulary/lists/l/words.php?f=ogden-qualities
