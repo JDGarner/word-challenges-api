@@ -2,7 +2,7 @@ const Rhymes = require("../models/rhymes");
 const Definitions = require("../models/definitions");
 
 const RHYME_RESPONSE_SIZE = 25;
-const DEFINITION_RESPONSE_SIZE = 1;
+const DEFINITION_RESPONSE_SIZE = 80;
 
 function getRhymesForDifficulty(difficulty) {
   return new Promise((resolve, reject) => {
