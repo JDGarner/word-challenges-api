@@ -3,4 +3,5 @@ dump/
 uri.js
 scripts/definitions/init-definitions-oxford.js
 backup/rhymes-backup.js
+backup/definitions-backup.js
 .env
