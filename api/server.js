@@ -4,7 +4,7 @@ const routes = require("./routes");
 const BodyParser = require("body-parser");
 
 const uri = process.env.MONGODB_URI ? process.env.MONGODB_URI : "mongodb://localhost:27017/words";
-mongoose.connect(uri);
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 
