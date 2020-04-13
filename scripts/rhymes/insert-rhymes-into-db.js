@@ -1,7 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
-const uri = require("../../uri");
+// const uri = require("../../uri");
+const rhymesBackup = require("../../backup/rhymes-backup");
 
-// const uri = "mongodb://localhost";
+const uri = "mongodb://localhost:27017/words";
 
 const insertRhymesIntoDbFirstTime = rhymes => {
   console.log(">>> Connecting to db");
@@ -44,5 +45,7 @@ const insertRhymesIntoDb = rhymes => {
     });
   });
 };
+
+insertRhymesIntoDb(rhymesBackup);
 
 module.exports = { insertRhymesIntoDb, insertRhymesIntoDbFirstTime };
