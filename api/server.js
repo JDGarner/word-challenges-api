@@ -2,9 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const BodyParser = require("body-parser");
+const { PORT, DB_URI } = require("../constants");
 
-const uri = process.env.MONGODB_URI ? process.env.MONGODB_URI : "mongodb://localhost:27017/words";
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 
@@ -26,11 +26,9 @@ app.use(function(req, res, next) {
 
 app.use("/", routes);
 
-const port = process.env.PORT || "3001";
-
-app.listen(port, function(error) {
+app.listen(PORT, function(error) {
   if (error) throw error;
-  console.log("Server running on port " + port);
+  console.log("Server running on PORT " + PORT);
 });
 
 module.exports = app;

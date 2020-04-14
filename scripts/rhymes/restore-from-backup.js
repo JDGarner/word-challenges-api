@@ -1,8 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
-// const uri = require("../../uri");
+const { DB_URI } = require("../../constants");
 const rhymesData = require("../../backup/rhymes-backup");
 
-const uri = "mongodb://localhost:27017/words";
+const uri = DB_URI;
 
 // const insertRhymesIntoDbFirstTime = rhymes => {
 //   console.log(">>> Connecting to db");
