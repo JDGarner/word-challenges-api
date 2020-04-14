@@ -1,14 +1,16 @@
-- set up branches and env variables
-  - will need to add thing for react native config to android (see github page)
+create words_dev and words_prod dbs
 
-General:
-- Deploy prod version on heroku free tier
-- Hook up to new DB? - another atlas db or mlab
+- develop branch
+  -> deploy to digitalocean/dev/
+  -> db = words_dev
+  -> port = 3000
 
-- Make Prod env using heroku, master branch, what DB?
-- Dev account using zeit, develop branch, mongo cloud db
+- master branch
+  -> deploy to digitalocean/prod/
+  -> db = words_prod
+  -> port = 3001
 
-- decide on DB hosting - mongo cloud or ??
+- how to set WORDS_API_KEY on digital ocean server?
 
 - Backup, create backup system? (will depend on hosting choice)
 
