@@ -1,0 +1,9 @@
+use words_dev
+db.definitions.remove({ word: "manichean" })
+db.definitions.update({ word: "chimera" }, { $set: { definition: "A fire-breathing creature with the body and head of a lion, a goat's head rising from its back, and a snake for a tail" } })
+db.definitions.insert({ word: "precious", definition: "Of great value and importance, e.g. The One Ring" })
+
+use words_prod
+db.definitions.remove({ word: "manichean" })
+db.definitions.update({ word: "chimera" }, { $set: { definition: "A fire-breathing creature with the body and head of a lion, a goat's head rising from its back, and a snake for a tail" } })
+db.definitions.insert({ word: "precious", definition: "Of great value and importance, e.g. The One Ring" })

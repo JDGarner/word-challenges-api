@@ -1,23 +1,22 @@
+- Backup, create backup system?
+  - cron job to dump mongo db contents?
+  - store in folders by date - how many copies to store?
+  - script to restore from backup?
 
-- how to set WORDS_API_KEY on digital ocean server?
+- how to monitor server response times/load? how to load test?
 
-- Backup, create backup system? (will depend on hosting choice)
-
-- load test api/or calculate how many users i might be able to have given bandwidth
-- look into ddos protection/general api security methods
-- research cors for mobile apps
+After Release:
+- look into improving ddos protection
+  - https://www.digitalocean.com/community/questions/does-digitalocean-have-an-anti-ddos-protection
 
 
 Definitions:
-Words to tweak:
-- Fix Chimera definitions, remove Manichean, Behaviour
 - Add more easy definitions
 - Tweak/check more definitions
-  - Add Precious "Something very special and important, e.g. a magical gold ring"
-
 
 Rhymes:
-- Handle UK and US Spelling?
+- Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes
+  - stick with one or accept both?
 
 
 Ideas:
