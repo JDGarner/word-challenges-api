@@ -1,3 +1,16 @@
+DEV/PROD System:
+- develop branch
+  -> deploy to digitalocean/dev/
+  -> db = words_dev
+  -> port = 3000
+
+- master branch
+  -> deploy to digitalocean/prod/
+  -> db = words_prod
+  -> port = 3001
+
+
+
 App will be something like:
 
 > Word pops up

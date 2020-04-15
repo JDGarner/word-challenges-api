@@ -1,14 +1,8 @@
-create words_dev and words_prod dbs
 
-- develop branch
-  -> deploy to digitalocean/dev/
-  -> db = words_dev
-  -> port = 3000
+deploy develop to digitalocean/dev/, restart node process
+deploy master to digitalocean/prod/, start node process
 
-- master branch
-  -> deploy to digitalocean/prod/
-  -> db = words_prod
-  -> port = 3001
+get nginx to proxy /dev and /prod to correct node processes
 
 - how to set WORDS_API_KEY on digital ocean server?
 
