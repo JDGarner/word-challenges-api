@@ -1,9 +1,4 @@
 
-deploy develop to digitalocean/dev/, restart node process
-deploy master to digitalocean/prod/, start node process
-
-get nginx to proxy /dev and /prod to correct node processes
-
 - how to set WORDS_API_KEY on digital ocean server?
 
 - Backup, create backup system? (will depend on hosting choice)

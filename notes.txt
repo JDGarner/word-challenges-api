@@ -9,71 +9,11 @@ DEV/PROD System:
   -> db = words_prod
   -> port = 3001
 
+Server setup:
+http requests are proxied to the node apps running at ports 3000 and 3001
+requests to /dev go to 3000
+requests to /prod go to 3001
+this is configured in /etc/nginx/sites-available/word-monkey-api.xyz
 
-
-App will be something like:
-
-> Word pops up
-> User has to enter as many rhyming words as possible
-> Time limit runs out
-> App shows how many u got right
-
-So API should be like:
-> getRhymesForWord(word)
-> /word-challenges-api/rhymes/{word}
-
-Future features:
-Want to be able to track how many times users have got each rhyme for each word
-e.g. BaseWord List, Rhyme Fist, Count 17
-Then give them a score based on how many people got each word compared to others
-
-
-
-How would this work in mongodb?
-
-
-
-
-DB:
-
-Base Word, Word it rhymes with, score, syllables
-
-
--> API call -> rhymes/list
-
-list, fist, 40, 1
-list, kissed, 49, 1
-list, missed, 60, 1
-
-
-MongoDB:
-
-Words: {
-  List: {
-    rhymes: [
-      { rhyme: "fist", score: 3, syllables: 1, successCount: 17 },
-      { rhyme: "missed", score: 5, syllables: 1, successCount: 13 },
-    ],
-    difficulty: 3
-  }
-  Face: {
-    ...
-  }
-}
-
--> [{ word: "fist", score: 2, syllables: 1 }, { word: "missed", score: 2, syllables: 1 }]
-
-
-
-
-SQL:
-
-Table base-words: (to make API call to)
-word, difficulty, 
-
-Table rhyming-words:
-base word, rhyming word, score, syllables
-
-SELECT * FROM rhyming-words WHERE base-word equals {word}
-
-
+node processes are managed by pm2, set to auto run on server startup
+can be stopped/restarted via pm2 (e.g. pm2 list, pm2 stop develop, pm2 restart production)
