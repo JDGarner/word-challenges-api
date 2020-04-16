@@ -13,6 +13,7 @@ After Release:
 Definitions:
 - Add more easy definitions
 - Tweak/check more definitions
+  - kindle definition
 
 Rhymes:
 - Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes

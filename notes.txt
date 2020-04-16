@@ -17,3 +17,11 @@ this is configured in /etc/nginx/sites-available/word-monkey-api.xyz
 
 node processes are managed by pm2, set to auto run on server startup
 can be stopped/restarted via pm2 (e.g. pm2 list, pm2 stop develop, pm2 restart production)
+
+
+Deploy Process:
+git push to develop/master
+ssh into server
+cd into ~/dev/word-challenges-api or ~/prod/word-challenges-api
+git pull
+pm2 restart develop or pm2 restart production
