@@ -9,16 +9,13 @@ After Release:
 - look into improving ddos protection
   - https://www.digitalocean.com/community/questions/does-digitalocean-have-an-anti-ddos-protection
 
+After Definitions refactor:
+Run April18, April19 migrations on develop and prod
 
 Definitions:
 - Add more easy definitions
 - Tweak/check more definitions
-  - kindle, weather (make easier) definition
-
   - pariah, adroit - replace with new definitions (when i add the new ones)
-  - precious - add eloRating and difficulty
-
-Run April18 migrations on server
 
 Rhymes:
 - Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes

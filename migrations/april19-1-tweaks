@@ -1,0 +1,11 @@
+use words_dev
+db.definitions.insert({ word: "luminous", definition: "Bright or radiant", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.update({ word: "precious" }, { $set: { difficulty: "journeyman", eloRating: 1400 } })
+db.definitions.update({ word: "weather" }, { $set: { definition: "The conditions in the air above the earth such as wind, rain, or temperature" } })
+db.definitions.update({ word: "kindle" }, { $set: { definition: "To cause a fire to start, or to arouse interest or passion" } })
+
+use words_prod
+db.definitions.insert({ word: "luminous", definition: "Bright or radiant", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.update({ word: "precious" }, { $set: { difficulty: "journeyman", eloRating: 1400 } })
+db.definitions.update({ word: "weather" }, { $set: { definition: "The conditions in the air above the earth such as wind, rain, or temperature" } })
+db.definitions.update({ word: "kindle" }, { $set: { definition: "To cause a fire to start, or to arouse interest or passion" } })
