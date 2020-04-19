@@ -2,7 +2,7 @@ const Rhymes = require("../models/rhymes");
 const Definitions = require("../models/definitions");
 
 const RHYME_RESPONSE_SIZE = 40;
-const DEFINITION_RESPONSE_SIZE = 200;
+const DEFINITION_RESPONSE_SIZE = 80;
 
 function getRhymesForDifficulty(difficulty) {
   return new Promise((resolve, reject) => {
@@ -31,24 +31,31 @@ function getRandomRhymes(req, res, next) {
     });
 }
 
-function getRandomEasyDefinitions(req, res, next) {
-  Definitions.aggregate(
-    [{ $match: { difficulty: "easy" } }, { $sample: { size: DEFINITION_RESPONSE_SIZE } }],
-    (err, definitions) => {
-      if (err) res.send(err);
-      res.json(definitions);
-    }
-  );
+function getDefinitionsForDifficulty(difficulty) {
+  return new Promise((resolve, reject) => {
+    Definitions.aggregate(
+      [{ $match: { difficulty } }, { $sample: { size: DEFINITION_RESPONSE_SIZE } }],
+      (err, definitions) => {
+        if (err) reject(err);
+        resolve(definitions);
+      }
+    );
+  });
 }
 
-function getRandomHardDefinitions(req, res, next) {
-  Definitions.aggregate(
-    [{ $match: { difficulty: "hard" } }, { $sample: { size: DEFINITION_RESPONSE_SIZE } }],
-    (err, definitions) => {
-      if (err) res.send(err);
-      res.json(definitions);
-    }
-  );
+function getRandomDefinitions(req, res, next) {
+  const novice = getDefinitionsForDifficulty("novice");
+  const journeyman = getDefinitionsForDifficulty("journeyman");
+  const expert = getDefinitionsForDifficulty("expert");
+  const master = getDefinitionsForDifficulty("master");
+
+  Promise.all([novice, journeyman, expert, master])
+    .then(values => {
+      res.json({ novice: values[0], journeyman: values[1], expert: values[2], master: values[3] });
+    })
+    .catch(err => {
+      res.send(err);
+    });
 }
 
 function setDefinitionELO(req, res, next) {
@@ -77,8 +84,7 @@ function setRhymeELO(req, res, next) {
 
 module.exports = {
   getRandomRhymes: getRandomRhymes,
-  getRandomEasyDefinitions: getRandomEasyDefinitions,
-  getRandomHardDefinitions: getRandomHardDefinitions,
+  getRandomDefinitions: getRandomDefinitions,
   setDefinitionELO: setDefinitionELO,
   setRhymeELO: setRhymeELO
 };

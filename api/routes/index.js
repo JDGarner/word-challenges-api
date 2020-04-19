@@ -3,8 +3,7 @@ const router = express.Router();
 const queries = require("../queries");
 
 router.get("/rhymes", queries.getRandomRhymes);
-router.get("/easy-definitions", queries.getRandomEasyDefinitions);
-router.get("/hard-definitions", queries.getRandomHardDefinitions);
+router.get("/definitions", queries.getRandomDefinitions);
 
 router.post("/definitions-elo", queries.setDefinitionELO);
 router.post("/rhymes-elo", queries.setRhymeELO);

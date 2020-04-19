@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon api/server.js",
-    "start": "node api/server.js"
+    "dev": "nodemon api/develop.js",
+    "start": "node api/develop.js"
   },
   "engines": {
     "node": "12.x"
