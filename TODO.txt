@@ -14,10 +14,11 @@ Definitions:
 - Add more easy definitions
 - Tweak/check more definitions
   - kindle, weather (make easier) definition
-  - luminous, pejorative, umbrage, sanguine, dispel, amenable, protean, fatuous, fractious, modicum, serendipity, alacrity, profligate, pithy - delete one
 
-  - pariah, adroit - replace with new definitions
+  - pariah, adroit - replace with new definitions (when i add the new ones)
   - precious - add eloRating and difficulty
+
+Run April18 migrations on server
 
 Rhymes:
 - Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes
