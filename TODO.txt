@@ -9,9 +9,6 @@ After Release:
 - look into improving ddos protection
   - https://www.digitalocean.com/community/questions/does-digitalocean-have-an-anti-ddos-protection
 
-After Definitions refactor:
-Run April18, April19 migrations on develop and prod
-
 Definitions:
 - Add more easy definitions
 - Tweak/check more definitions

@@ -4,6 +4,20 @@ const Definitions = require("../models/definitions");
 const RHYME_RESPONSE_SIZE = 40;
 const DEFINITION_RESPONSE_SIZE = 80;
 
+const DIFFICULTIES = {
+  NOVICE: "novice",
+  JOURNEYMAN: "journeyman",
+  EXPERT: "expert",
+  MASTER: "master"
+};
+
+const DIFFICULTY_ELO_RANGES = {
+  [DIFFICULTIES.NOVICE]: { lower: 800, upper: 1200 },
+  [DIFFICULTIES.JOURNEYMAN]: { lower: 1200, upper: 1600 },
+  [DIFFICULTIES.EXPERT]: { lower: 1600, upper: 2000 },
+  [DIFFICULTIES.MASTER]: { lower: 2000, upper: 3600 }
+};
+
 function getRhymesForDifficulty(difficulty) {
   return new Promise((resolve, reject) => {
     Rhymes.aggregate(
@@ -61,23 +75,51 @@ function getRandomDefinitions(req, res, next) {
 function setDefinitionELO(req, res, next) {
   const { word, elo } = req.body;
 
-  Definitions.update({ word }, { $set: { eloRating: elo } }, err => {
+  Definitions.findOne({ word }, (err, result) => {
     if (err) {
       res.send(err);
     } else {
-      res.send(200);
+      const newELO = getActualNewELO(elo, result.difficulty);
+      Definitions.updateOne({ word }, { $set: { eloRating: newELO } }, err => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.sendStatus(200);
+        }
+      });
     }
   });
 }
 
+const getActualNewELO = (potentialNewELO, difficulty) => {
+  const { lower, upper } = DIFFICULTY_ELO_RANGES[difficulty];
+
+  if (potentialNewELO < lower) {
+    return lower;
+  }
+
+  if (potentialNewELO > upper) {
+    return upper;
+  }
+
+  return potentialNewELO;
+};
+
 function setRhymeELO(req, res, next) {
   const { word, elo } = req.body;
 
-  Rhymes.update({ word }, { $set: { eloRating: elo } }, err => {
+  Rhymes.findOne({ word }, (err, result) => {
     if (err) {
       res.send(err);
     } else {
-      res.send(200);
+      const newELO = getActualNewELO(elo, result.difficulty);
+      Rhymes.updateOne({ word }, { $set: { eloRating: newELO } }, err => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.sendStatus(200);
+        }
+      });
     }
   });
 }
