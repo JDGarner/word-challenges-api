@@ -10,9 +10,8 @@ After Release:
   - https://www.digitalocean.com/community/questions/does-digitalocean-have-an-anti-ddos-protection
 
 Definitions:
-- Add more easy definitions
-- Tweak/check more definitions
-  - pariah, adroit - replace with new definitions (when i add the new ones)
+- Run April23 + April24-novice migrations
+- Remove/Redo - Road, Profligacy, Enfranchise
 
 Rhymes:
 - Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes

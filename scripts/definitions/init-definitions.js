@@ -12,7 +12,7 @@ const capitalize = require("lodash").capitalize;
 
 const getDefinition = result => {
   if (result && result[0] && result[0].defs && result[0].defs[0]) {
-    let definition = result[0].defs[1];
+    let definition = result[0].defs[0];
     definition = definition.split(" ");
     definition.shift();
     definition[0] = capitalize(definition[0]);
@@ -22,7 +22,7 @@ const getDefinition = result => {
   return null;
 };
 
-const getDefinitionsForWord = async word => {
+const getDefinitionsForWord = async (word, difficulty, eloRating) => {
   return new Promise(async (resolve, reject) => {
     try {
       const url = `https://api.datamuse.com/words?sp=${word}&md=d`;
@@ -32,7 +32,7 @@ const getDefinitionsForWord = async word => {
       const definition = getDefinition(json);
       if (definition) {
         console.log(`${word}: ${definition}`);
-        resolve({ word, definition });
+        resolve({ word, definition, difficulty, eloRating });
       } else {
         console.log("No definition found for: ", word);
         resolve(null);
@@ -44,7 +44,7 @@ const getDefinitionsForWord = async word => {
   });
 };
 
-const getDefinitionsForWords = async words => {
+const getDefinitionsForWords = async (words, difficulty, eloRating) => {
   const results = [];
 
   function getAllDefinitions(words) {
@@ -60,7 +60,7 @@ const getDefinitionsForWords = async words => {
     let index = 0;
     function next() {
       if (index < words.length) {
-        return getDefinitionsForWord(words[index++]).then(function(data) {
+        return getDefinitionsForWord(words[index++], difficulty, eloRating).then(function(data) {
           return delay(200, data).then(next);
         });
       }
@@ -69,13 +69,19 @@ const getDefinitionsForWords = async words => {
     return Promise.resolve().then(next);
   }
 
-  getAllDefinitions(words).then(() => {
-    console.log(">>> Insert definitions into db");
+  return getAllDefinitions(words).then(() => {
+    // console.log(">>> results: ", results);
+    return results;
+
+    // console.log(">>> Insert definitions into db");
     // insertDefinitionsIntoDb(results);
   });
 };
 
-const words2 = ["sessile", "haberdashery"];
+// const words2 = ["sessile", "haberdashery"];
 
 // getDefinitionsForWords(words);
-getDefinitionsForWords(words2);
+
+module.exports = {
+  getDefinitionsForWords
+};

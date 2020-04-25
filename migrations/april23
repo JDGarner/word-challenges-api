@@ -1,0 +1,74 @@
+use words_dev
+
+db.definitions.remove({ $or: [ { word: "pariah" }, { word: "alacrity" }, { word: "meticulous" }, { word: "linchpin" }, { word: "adroit" } ] })
+
+db.definitions.insert({ word: "cautious", definition: "taking care to avoid mistakes or danger", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "prosperous", definition: "doing well financially", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "protagonist", definition: "the main character in a story", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "antagonist", definition: "someone who acts in opposition to someone else, often used to describe the villain in stories", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "glib", definition: "a good talker, but superficial and lacking intellectual depth", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "ciabatta", definition: "a type of Italian bread in a long, flat shape", difficulty: "journeyman", eloRating: 1400 })
+
+db.definitions.insert({ word: "haggard", definition: "looking exhausted and worn out, especially as a result of a long, harrowing ordeal", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "parochial", definition: "relating to a church parish", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "pariah", definition: "an outcast, one who is rejected by their community", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "charlatan", definition: "someone who falsely claims to have expert knowledge or skills, e.g astrologers", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "poignant", definition: "evoking a sharp feeling of sadness or regret", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "linchpin", definition: "a vitally important person or an essential element, e.g. a key witness in a defense's case", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "distal", definition: "far from the centre or origin", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "behest", definition: "an authoritative command", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "adroit", definition: "clever or skillful, from the French for 'to the right'", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "alacrity", definition: "cheerful and eager behaviour", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "intricate", definition: "very detailed or complicated", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "nepotism", definition: "favouritism of family or friends by those in power", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "ostracise", definition: "to banish or exclude someone from a group", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "assuage", definition: "to make an unpleasant feeling less intense", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "fete", definition: "a lavish often outdoor entertainment, from the French word for 'party'", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "meticulous", definition: "paying extreme attention to detail", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "cathartic", definition: "providing psychological relief through the release of strong emotions", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "gregarious", definition: "sociable, outgoing, fond of the company of others", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "desolation", definition: "a state of complete emptiness or hopelessness", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "expedite", definition: "to make something go faster or speed up the process", difficulty: "expert", eloRating: 1800 })
+
+db.definitions.insert({ word: "remonstrate", definition: "to protest, criticise or take issue with something", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "assonance", definition: "when two or more words close together share similar sounds, e.g. 'The crumbling thunder of seas'", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "moribund", definition: "approaching death; often used in a business sense, for example, when describing a failing property market", difficulty: "master", eloRating: 2800 })
+
+
+
+
+use words_prod
+
+db.definitions.remove({ $or: [ { word: "pariah" }, { word: "alacrity" }, { word: "meticulous" }, { word: "linchpin" }, { word: "adroit" } ] })
+
+db.definitions.insert({ word: "cautious", definition: "taking care to avoid mistakes or danger", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "prosperous", definition: "doing well financially", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "protagonist", definition: "the main character in a story", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "antagonist", definition: "someone who acts in opposition to someone else, often used to describe the villain in stories", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "glib", definition: "a good talker, but superficial and lacking intellectual depth", difficulty: "journeyman", eloRating: 1400 })
+db.definitions.insert({ word: "ciabatta", definition: "a type of Italian bread in a long, flat shape", difficulty: "journeyman", eloRating: 1400 })
+
+db.definitions.insert({ word: "haggard", definition: "looking exhausted and worn out, especially as a result of a long, harrowing ordeal", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "parochial", definition: "relating to a church parish", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "pariah", definition: "an outcast, one who is rejected by their community", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "charlatan", definition: "someone who falsely claims to have expert knowledge or skills, e.g astrologers", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "poignant", definition: "evoking a sharp feeling of sadness or regret", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "linchpin", definition: "a vitally important person or an essential element, e.g. a key witness in a defense's case", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "distal", definition: "far from the centre or origin", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "behest", definition: "an authoritative command", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "adroit", definition: "clever or skillful, from the French for 'to the right'", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "alacrity", definition: "cheerful and eager behaviour", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "intricate", definition: "very detailed or complicated", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "nepotism", definition: "favouritism of family or friends by those in power", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "ostracise", definition: "to banish or exclude someone from a group", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "assuage", definition: "to make an unpleasant feeling less intense", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "fete", definition: "a lavish often outdoor entertainment, from the French word for 'party'", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "meticulous", definition: "paying extreme attention to detail", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "cathartic", definition: "providing psychological relief through the release of strong emotions", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "gregarious", definition: "sociable, outgoing, fond of the company of others", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "desolation", definition: "a state of complete emptiness or hopelessness", difficulty: "expert", eloRating: 1800 })
+db.definitions.insert({ word: "expedite", definition: "to make something go faster or speed up the process", difficulty: "expert", eloRating: 1800 })
+
+db.definitions.insert({ word: "remonstrate", definition: "to protest, criticise or take issue with something", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "assonance", definition: "when two or more words close together share similar sounds, e.g. 'The crumbling thunder of seas'", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "moribund", definition: "approaching death; often used in a business sense, for example, when describing a failing property market", difficulty: "master", eloRating: 2800 })
