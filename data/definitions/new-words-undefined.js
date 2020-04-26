@@ -8,7 +8,10 @@ const journeymanWords = [
   "brisk",
   "bawl",
   "rampage",
-  "fiancee"
+  "fiancee",
+  "legacy",
+  "hone",
+  "parameter"
 ];
 
 const expertWords = [

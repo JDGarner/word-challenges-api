@@ -1,0 +1,34 @@
+use words_dev
+
+db.definitions.remove({ $or: [ { word: "aberration" }, { word: "boondoggle" }, { word: "clairvoyant" }, { word: "inalienable" }, { word: "intransigence" }, { word: "jurisprudence" }, { word: "engender" }, { word: "malediction" }, { word: "stipulate" }, { word: "untenable" }, { word: "unequivocal" }, { word: "yeoman" } ] })
+
+db.definitions.insert({ word: "aberration", definition: "a state or condition markedly different from the norm", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "boondoggle", definition: "work of little or no value done merely to look busy", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "clairvoyant", definition: "someone who can perceive things not present to the senses", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "inalienable", definition: "incapable of being repudiated or transferred to another", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "intransigence", definition: "stubborn refusal to compromise or change", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "jurisprudence", definition: "the branch of philosophy concerned with the law", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "engender", definition: "to call forth", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "malediction", definition: "the act of calling down a curse that invokes evil", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "stipulate", definition: "make an express demand or provision in an agreement", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "untenable", definition: "incapable of being defended or justified", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "unequivocal", definition: "admitting of no doubt or misunderstanding", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "yeoman", definition: "a free man who cultivates his own land", difficulty: "master", eloRating: 2800 })
+
+
+use words_prod
+
+db.definitions.remove({ $or: [ { word: "aberration" }, { word: "boondoggle" }, { word: "clairvoyant" }, { word: "inalienable" }, { word: "intransigence" }, { word: "jurisprudence" }, { word: "engender" }, { word: "malediction" }, { word: "stipulate" }, { word: "untenable" }, { word: "unequivocal" }, { word: "yeoman" } ] })
+
+db.definitions.insert({ word: "aberration", definition: "a state or condition markedly different from the norm", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "boondoggle", definition: "work of little or no value done merely to look busy", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "clairvoyant", definition: "someone who can perceive things not present to the senses", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "inalienable", definition: "incapable of being repudiated or transferred to another", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "intransigence", definition: "stubborn refusal to compromise or change", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "jurisprudence", definition: "the branch of philosophy concerned with the law", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "engender", definition: "to call forth", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "malediction", definition: "the act of calling down a curse that invokes evil", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "stipulate", definition: "make an express demand or provision in an agreement", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "untenable", definition: "incapable of being defended or justified", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "unequivocal", definition: "admitting of no doubt or misunderstanding", difficulty: "master", eloRating: 2800 })
+db.definitions.insert({ word: "yeoman", definition: "a free man who cultivates his own land", difficulty: "master", eloRating: 2800 })

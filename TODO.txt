@@ -10,7 +10,7 @@ After Release:
   - https://www.digitalocean.com/community/questions/does-digitalocean-have-an-anti-ddos-protection
 
 Definitions:
-- Run April23 + April24-novice migrations
+- 
 - Remove/Redo - Road, Profligacy, Enfranchise
 
 Rhymes:
