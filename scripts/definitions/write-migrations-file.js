@@ -1,17 +1,17 @@
 const fs = require("fs");
+// const {
+//   noviceWords,
+//   journeymanWords,
+//   expertWords,
+//   masterWords
+// } = require("../../data/definitions/new-words-undefined");
 const {
-  noviceWords,
   journeymanWords,
   expertWords,
   masterWords
-} = require("../../data/definitions/new-words-undefined");
+} = require("../../data/definitions/new-words-defined");
 const { getDefinitionsForWords } = require("./init-definitions-oxford");
 // const { getDefinitionsForWords } = require("./init-definitions");
-
-// getDefinitionsForWords(noviceWords, "novice", 1000);
-// getDefinitionsForWords(journeymanWords, "journeyman", 1400);
-// getDefinitionsForWords(expertWords, "expert", 1800);
-// getDefinitionsForWords(masterWords, "master", 2800);
 
 const getEntryStringFromResult = result => {
   if (result && result.word) {
@@ -39,17 +39,36 @@ const getRemovePreviousCommand = results => {
   return `db.definitions.remove({ $or: [ ${strings.join("")} ] })\n\n`;
 };
 
-getDefinitionsForWords(noviceWords, "novice", 1000).then(results => {
-  const entries = results.map(result => getEntryStringFromResult(result));
-  const queries = [getRemovePreviousCommand(results), entries.join("")].join("");
+// getDefinitionsForWords(noviceWords, "novice", 1000).then(results => {
+//   const entries = results.map(result => getEntryStringFromResult(result));
+//   const queries = [getRemovePreviousCommand(results), entries.join("")].join("");
+
+//   const wordsDev = "use words_dev\n\n";
+//   const wordsProd = "\n\nuse words_prod\n\n";
+
+//   const fileContent = [wordsDev, queries, wordsProd, queries].join("");
+
+//   fs.writeFile("migrations/april24-novice-D-L", fileContent, function(err) {
+//     if (err) throw err;
+//     console.log("Success!");
+//   });
+// });
+
+const createInsertMigrationFile = (words, filename) => {
+  const entries = words.map(result => getEntryStringFromResult(result));
+  const queries = [getRemovePreviousCommand(words), entries.join("")].join("");
 
   const wordsDev = "use words_dev\n\n";
   const wordsProd = "\n\nuse words_prod\n\n";
 
   const fileContent = [wordsDev, queries, wordsProd, queries].join("");
 
-  fs.writeFile("migrations/april24-novice-D-L", fileContent, function(err) {
+  fs.writeFile(`migrations/${filename}`, fileContent, function(err) {
     if (err) throw err;
     console.log("Success!");
   });
-});
+};
+
+createInsertMigrationFile(journeymanWords, "april25-journeyman");
+createInsertMigrationFile(expertWords, "april25-expert");
+createInsertMigrationFile(masterWords, "april25-master");
