@@ -3,8 +3,6 @@ const Definitions = require("../models/definitions");
 
 const RHYME_RESPONSE_SIZE = 40;
 const DEFINITION_RESPONSE_SIZE = 80;
-const MAX_ELO_GAIN = 32;
-const MAX_ELO_LOSS = -32;
 
 const DIFFICULTIES = {
   NOVICE: "novice",
@@ -93,14 +91,7 @@ function setDefinitionELO(req, res, next) {
   });
 }
 
-const getActualNewELO = (elo, difficulty) => {
-  let potentialNewELO = elo;
-  if (elo > MAX_ELO_GAIN) {
-    potentialNewELO = MAX_ELO_GAIN;
-  } else if (elo < MAX_ELO_LOSS) {
-    potentialNewELO = MAX_ELO_LOSS;
-  }
-
+const getActualNewELO = (potentialNewELO, difficulty) => {
   const { lower, upper } = DIFFICULTY_ELO_RANGES[difficulty];
 
   if (potentialNewELO < lower) {
