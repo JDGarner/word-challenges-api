@@ -13,12 +13,3 @@ const setInitialELOForDifficulty = (difficulty, eloRating) => {
     db.collection("definitions").updateMany({ difficulty }, { $set: { eloRating } });
   });
 };
-
-setInitialELOForDifficulty("easy", 1000);
-setInitialELOForDifficulty("hard", 1800);
-
-// Possible Ranges:
-// Novice ~ 800-1000
-// Journeyman ~ 1000-1200
-// Expert ~ 1600-1800
-// Master ~ 1800-2000

@@ -39,7 +39,7 @@ const getRemovePreviousCommand = results => {
   return `db.definitions.remove({ $or: [ ${strings.join("")} ] })\n\n`;
 };
 
-// getDefinitionsForWords(noviceWords, "novice", 1000).then(results => {
+// getDefinitionsForWords(noviceWords, "novice", 800).then(results => {
 //   const entries = results.map(result => getEntryStringFromResult(result));
 //   const queries = [getRemovePreviousCommand(results), entries.join("")].join("");
 

@@ -12,10 +12,10 @@ const DIFFICULTIES = {
 };
 
 const DIFFICULTY_ELO_RANGES = {
-  [DIFFICULTIES.NOVICE]: { lower: 800, upper: 1200 },
-  [DIFFICULTIES.JOURNEYMAN]: { lower: 1200, upper: 1600 },
-  [DIFFICULTIES.EXPERT]: { lower: 1600, upper: 2000 },
-  [DIFFICULTIES.MASTER]: { lower: 2000, upper: 3600 }
+  [DIFFICULTIES.NOVICE]: { lower: 600, upper: 1000 },
+  [DIFFICULTIES.JOURNEYMAN]: { lower: 1000, upper: 1600 },
+  [DIFFICULTIES.EXPERT]: { lower: 1600, upper: 2200 },
+  [DIFFICULTIES.MASTER]: { lower: 2200, upper: 3600 }
 };
 
 function getRhymesForDifficulty(difficulty) {
