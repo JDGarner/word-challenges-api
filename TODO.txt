@@ -1,17 +1,5 @@
-- Backup, create backup system?
-  - cron job to dump mongo db contents?
-  - store in folders by date - how many copies to store?
-  - script to restore from backup?
-
 - how to monitor server response times/load? how to load test?
 - upgrade server before release?
-- restrict max elo change on set-elo routes (to 32?)
-
-Update ELO mid ranges:
-[NOVICE]: { lower: 600, upper: 1000 }, 800
-[JOURNEYMAN]: { lower: 1000, upper: 1600 }, 1300
-[EXPERT]: { lower: 1600, upper: 2200 }, 1900
-[MASTER]: { lower: 2200, upper: 3600 }, 2900
 
 Definitions:
 - Add more journeyman, expert and master words
@@ -29,6 +17,11 @@ Rhymes:
 After Release:
 - look into improving ddos protection
   - https://www.digitalocean.com/community/questions/does-digitalocean-have-an-anti-ddos-protection
+
+- Backup, create backup system?
+  - cron job to dump mongo db contents?
+  - store in folders by date - how many copies to store?
+  - script to restore from backup?
 
 Ideas:
 - http://www.manythings.org/vocabulary/lists/l/words.php?f=ogden-qualities
