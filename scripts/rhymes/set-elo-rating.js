@@ -14,14 +14,12 @@ const setInitialELOForDifficulty = (difficulty, eloRating) => {
   });
 };
 
-setInitialELOForDifficulty("novice", 1000);
-setInitialELOForDifficulty("journeyman", 1400);
-setInitialELOForDifficulty("expert", 1800);
-setInitialELOForDifficulty("master", 2800);
+// [NOVICE]: { lower: 600, upper: 1000 }, 800
+// [JOURNEYMAN]: { lower: 1000, upper: 1600 }, 1300
+// [EXPERT]: { lower: 1600, upper: 2200 }, 1900
+// [MASTER]: { lower: 2200, upper: 3600 }, 2900
 
-// const DIFFICULTY_ELO_RANGES = {
-//   [DIFFICULTIES.NOVICE]: { lower: 800, upper: 1200 },
-//   [DIFFICULTIES.JOURNEYMAN]: { lower: 1200, upper: 1600 },
-//   [DIFFICULTIES.EXPERT]: { lower: 1600, upper: 2000 },
-//   [DIFFICULTIES.MASTER]: { lower: 2000, upper: 3600 },
-// };
+setInitialELOForDifficulty("novice", 800);
+setInitialELOForDifficulty("journeyman", 1300);
+setInitialELOForDifficulty("expert", 1900);
+setInitialELOForDifficulty("master", 2900);

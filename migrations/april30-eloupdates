@@ -1,0 +1,21 @@
+use words_dev
+
+db.definitions.updateMany({ difficulty: "novice" }, { $set: { eloRating: 800 } })
+db.definitions.updateMany({ difficulty: "journeyman" }, { $set: { eloRating: 1300 } })
+db.definitions.updateMany({ difficulty: "expert" }, { $set: { eloRating: 1900 } })
+db.definitions.updateMany({ difficulty: "master" }, { $set: { eloRating: 2900 } })
+db.rhymes.updateMany({ difficulty: "novice" }, { $set: { eloRating: 800 } })
+db.rhymes.updateMany({ difficulty: "journeyman" }, { $set: { eloRating: 1300 } })
+db.rhymes.updateMany({ difficulty: "expert" }, { $set: { eloRating: 1900 } })
+db.rhymes.updateMany({ difficulty: "master" }, { $set: { eloRating: 2900 } })
+
+use words_prod
+
+db.definitions.updateMany({ difficulty: "novice" }, { $set: { eloRating: 800 } })
+db.definitions.updateMany({ difficulty: "journeyman" }, { $set: { eloRating: 1300 } })
+db.definitions.updateMany({ difficulty: "expert" }, { $set: { eloRating: 1900 } })
+db.definitions.updateMany({ difficulty: "master" }, { $set: { eloRating: 2900 } })
+db.rhymes.updateMany({ difficulty: "novice" }, { $set: { eloRating: 800 } })
+db.rhymes.updateMany({ difficulty: "journeyman" }, { $set: { eloRating: 1300 } })
+db.rhymes.updateMany({ difficulty: "expert" }, { $set: { eloRating: 1900 } })
+db.rhymes.updateMany({ difficulty: "master" }, { $set: { eloRating: 2900 } })
