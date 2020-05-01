@@ -3,9 +3,9 @@
 
 Definitions:
 - Add more journeyman, expert and master words
-- Remove/Tweak - Road, Profligacy, Enfranchise, Bell, Gold, Sugar, Mouth, Delerious, Pithy, Kind, Lamp, Chair, Zero
-- Change difficulty - Comfortable, Government, Feral, Comfortable, Condition, Serenity, Proper
-- Filter out really long definitions
+- Find out really long definitions and shorten them
+- Remove/Tweak - 
+- Change difficulty - 
 
 Rhymes:
 - Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes

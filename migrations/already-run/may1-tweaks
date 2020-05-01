@@ -1,0 +1,43 @@
+use words_dev
+
+db.definitions.update({ word: "feral" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "government" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "serenity" }, { $set: { difficulty: "expert", eloRating: 1900 } })
+db.definitions.update({ word: "comfortable" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "condition" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "proper" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+
+db.definitions.update({ word: "profligacy" }, { $set: { definition: "Recklessly wasteful; wildly extravagant" } })
+db.definitions.update({ word: "pithy" }, { $set: { definition: "Concise and meaningful" } })
+db.definitions.update({ word: "enfranchise" }, { $set: { definition: "Giving freedom or the right to vote" } })
+db.definitions.update({ word: "bell" }, { $set: { definition: "Hollow object, usually metal, that makes a deep ringing sound when hit" } })
+db.definitions.update({ word: "chair" }, { $set: { definition: "A seat with four legs" } })
+db.definitions.update({ word: "mouth" }, { $set: { definition: "The hole from which you eat, speak, and breathe" } })
+db.definitions.update({ word: "road" }, { $set: { definition: "A wide, usually paved path that's big enough for cars to travel on" } })
+db.definitions.update({ word: "sugar" }, { $set: { definition: "A sweet crystalline substance obtained from various plants" } })
+db.definitions.update({ word: "zero" }, { $set: { definition: "No quantity or number; nothing" } })
+db.definitions.update({ word: "gold" }, { $set: { definition: "A yellow precious metal, used especially in jewellery" } })
+db.definitions.update({ word: "kind" }, { $set: { definition: "A helpful and considerate nature" } })
+db.definitions.update({ word: "lamp" }, { $set: { definition: "A small appliance that holds an electric bulb and produces light" } })
+
+use words_prod
+
+db.definitions.update({ word: "feral" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "government" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "serenity" }, { $set: { difficulty: "expert", eloRating: 1900 } })
+db.definitions.update({ word: "comfortable" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "condition" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "proper" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+
+db.definitions.update({ word: "profligacy" }, { $set: { definition: "Recklessly wasteful; wildly extravagant" } })
+db.definitions.update({ word: "pithy" }, { $set: { definition: "Concise and meaningful" } })
+db.definitions.update({ word: "enfranchise" }, { $set: { definition: "Giving freedom or the right to vote" } })
+db.definitions.update({ word: "bell" }, { $set: { definition: "Hollow object, usually metal, that makes a deep ringing sound when hit" } })
+db.definitions.update({ word: "chair" }, { $set: { definition: "A seat with four legs" } })
+db.definitions.update({ word: "mouth" }, { $set: { definition: "The hole from which you eat, speak, and breathe" } })
+db.definitions.update({ word: "road" }, { $set: { definition: "A wide, usually paved path that's big enough for cars to travel on" } })
+db.definitions.update({ word: "sugar" }, { $set: { definition: "A sweet crystalline substance obtained from various plants" } })
+db.definitions.update({ word: "zero" }, { $set: { definition: "No quantity or number; nothing" } })
+db.definitions.update({ word: "gold" }, { $set: { definition: "A yellow precious metal, used especially in jewellery" } })
+db.definitions.update({ word: "kind" }, { $set: { definition: "A helpful and considerate nature" } })
+db.definitions.update({ word: "lamp" }, { $set: { definition: "A small appliance that holds an electric bulb and produces light" } })
