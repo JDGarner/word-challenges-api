@@ -2,7 +2,8 @@
 - upgrade server before release?
 
 Definitions:
-- Add more journeyman, expert and master words
+- Add new novice and journeyman
+- Add new expert and master words
 - Find out really long definitions and shorten them
 - Remove/Tweak - jelly
 - Change difficulty - emerge

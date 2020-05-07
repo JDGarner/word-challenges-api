@@ -1701,4 +1701,7 @@ const masterWords = ["incongruous"];
 
 module.exports = {
   noviceWords,
+  journeymanWords,
+  expertWords,
+  masterWords,
 };
