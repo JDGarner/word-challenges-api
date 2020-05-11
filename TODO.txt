@@ -4,8 +4,6 @@
 Definitions:
 - Add new expert and master words
 - Find out really long definitions and shorten them
-- Remove/Tweak - jelly
-- Change difficulty - emerge
 
 Rhymes:
 - Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes

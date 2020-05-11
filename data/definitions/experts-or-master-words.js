@@ -1,8 +1,7 @@
-// To be sorted into expert/master
+const fs = require("fs");
 // If definition is bad, put it into new-words-undefined
 
 const expertWords = [
-  { word: "noisome", definition: "harmful, stinking" },
   { word: "obdurate", definition: "unyielding" },
   { word: "obeisance", definition: "homage, deference" },
   { word: "oblique", definition: "indirect" },
@@ -898,7 +897,7 @@ const expertWords = [
   { word: "nettle", definition: "irritate" },
 ];
 
-const potentialMasterWords = [
+const masterWords = [
   { word: "apostate", definition: "one who abandons one's faith" },
   { word: "antediluvian", definition: "ancient, obsolete, pre historic" },
   { word: "approbation", definition: "praise, official approval" },
@@ -1585,7 +1584,38 @@ const potentialMasterWords = [
   { word: "emendation", definition: "corrections of errors" },
   { word: "empyreal", definition: "celestial, fiery" },
   { word: "encomiastic", definition: "praising, eulogistic" },
+  { word: "noisome", definition: "harmful, stinking" },
 ];
+
+const splitDefinitionsWithLessThan1Word = (words) => {
+  const lessThanTwoWords = words
+    .filter((w) => {
+      return w.definition.split(" ").length <= 1;
+    })
+    .map((x) => `${x.word} >>> ${x.definition}`);
+
+  const fileContent = lessThanTwoWords.join("\n");
+
+  fs.writeFile(`data/definitions/expert-undefined`, fileContent, function (err) {
+    if (err) throw err;
+    console.log("Success!");
+  });
+
+  const moreThanTwoWords = words
+    .filter((w) => {
+      return w.definition.split(" ").length > 1;
+    })
+    
+    .map((x) => `${x.word} >>> ${x.definition}`);
+  const fileContent2 = moreThanTwoWords.join("\n");
+
+  fs.writeFile(`data/definitions/expert-defined`, fileContent2, function (err) {
+    if (err) throw err;
+    console.log("Success!");
+  });
+};
+
+splitDefinitionsWithLessThan1Word(expertWords);
 
 /*
 const expertWordsUndefined = [

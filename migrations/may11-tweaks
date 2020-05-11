@@ -1,0 +1,7 @@
+use words_dev
+db.definitions.update({ word: "emerge" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "jelly" }, { $set: { definition: "A fruit-flavoured dessert with soft, elastic consistency" } })
+
+use words_prod
+db.definitions.update({ word: "emerge" }, { $set: { difficulty: "journeyman", eloRating: 1300 } })
+db.definitions.update({ word: "jelly" }, { $set: { definition: "A fruit-flavoured dessert with soft, elastic consistency" } })
