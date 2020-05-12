@@ -2,3 +2,4 @@ node_modules
 dump/
 scripts/definitions/init-definitions-oxford.js
 .env
+ecosystem.config.js
