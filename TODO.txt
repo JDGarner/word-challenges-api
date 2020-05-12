@@ -2,8 +2,6 @@
 - upgrade server before release?
 
 Definitions:
-- Add new expert and master words
-- Find out really long definitions and shorten them
 
 Rhymes:
 - Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes

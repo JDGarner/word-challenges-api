@@ -11,7 +11,7 @@ MongoClient.connect(uri, { useNewUrlParser: true }, function (err, client) {
 
   db.collection("definitions")
     .find({
-      definition: /^[\s\S]{180,}$/,
+      definition: /^[\s\S]{160,}$/,
     })
     .toArray((err, results) => {
       if (err) throw err;
@@ -20,8 +20,9 @@ MongoClient.connect(uri, { useNewUrlParser: true }, function (err, client) {
       });
       client.close();
     });
-  // db.collection("definitions").count({ definition: /^[\s\S]{180,}$/ }, (err, res) => {
+  // db.collection("definitions").count({ definition: /^[\s\S]{160,}$/ }, (err, res) => {
   //   console.log(">>> res: ", res);
   //   client.close();
   // });
 });
+
