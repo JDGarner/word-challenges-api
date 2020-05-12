@@ -2,14 +2,8 @@
 - upgrade server before release?
 
 Definitions:
-- Add more journeyman, expert and master words
-- Find out really long definitions and shorten them
-- Remove/Tweak - 
-- Change difficulty - 
 
 Rhymes:
-- Handle UK and US Spelling? - check which is used in my dataset, for words and Rhymes
-  - stick with one or accept both?
 - add Bot to Hot
 - add Been to Queen
 

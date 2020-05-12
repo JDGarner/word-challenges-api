@@ -1,19 +1,16 @@
 const fs = require("fs");
+const {
+  masterWords
+} = require("../../data/definitions/master-undefined");
 // const {
-//   noviceWords,
 //   journeymanWords,
 //   expertWords,
-//   masterWords
-// } = require("../../data/definitions/new-words-undefined");
-const {
-  journeymanWords,
-  expertWords,
-  masterWords
-} = require("../../data/definitions/new-words-defined");
+//   masterWords,
+// } = require("../../data/definitions/new-words-defined");
 const { getDefinitionsForWords } = require("./init-definitions-oxford");
 // const { getDefinitionsForWords } = require("./init-definitions");
 
-const getEntryStringFromResult = result => {
+const getEntryStringFromResult = (result) => {
   if (result && result.word) {
     const { word, definition, difficulty, eloRating } = result;
 
@@ -23,7 +20,7 @@ const getEntryStringFromResult = result => {
   return "";
 };
 
-const getRemovePreviousCommand = results => {
+const getRemovePreviousCommand = (results) => {
   const strings = results.map((result, i) => {
     if (result && result.word) {
       if (i < results.length - 1) {
@@ -39,20 +36,22 @@ const getRemovePreviousCommand = results => {
   return `db.definitions.remove({ $or: [ ${strings.join("")} ] })\n\n`;
 };
 
-// getDefinitionsForWords(noviceWords, "novice", 800).then(results => {
-//   const entries = results.map(result => getEntryStringFromResult(result));
-//   const queries = [getRemovePreviousCommand(results), entries.join("")].join("");
+const getDefsAndCreateInsertMigrationFile = (words, difficulty, elo, filename) => {
+  getDefinitionsForWords(words, difficulty, elo).then((results) => {
+    const entries = results.map((result) => getEntryStringFromResult(result));
+    const queries = [getRemovePreviousCommand(results), entries.join("")].join("");
 
-//   const wordsDev = "use words_dev\n\n";
-//   const wordsProd = "\n\nuse words_prod\n\n";
+    const wordsDev = "use words_dev\n\n";
+    const wordsProd = "\n\nuse words_prod\n\n";
 
-//   const fileContent = [wordsDev, queries, wordsProd, queries].join("");
+    const fileContent = [wordsDev, queries, wordsProd, queries].join("");
 
-//   fs.writeFile("migrations/april24-novice-D-L", fileContent, function(err) {
-//     if (err) throw err;
-//     console.log("Success!");
-//   });
-// });
+    fs.writeFile(`migrations/${filename}`, fileContent, function (err) {
+      if (err) throw err;
+      console.log("Success!");
+    });
+  });
+};
 
 const createInsertMigrationFile = (words, filename) => {
   const entries = words.map(result => getEntryStringFromResult(result));
@@ -69,6 +68,13 @@ const createInsertMigrationFile = (words, filename) => {
   });
 };
 
-createInsertMigrationFile(journeymanWords, "april25-journeyman");
-createInsertMigrationFile(expertWords, "april25-expert");
-createInsertMigrationFile(masterWords, "april25-master");
+// createInsertMigrationFile(journeymanWords, "april25-journeyman");
+// createInsertMigrationFile(expertWords, "april25-expert");
+// createInsertMigrationFile(masterWords, "april25-master");
+
+// getDefsAndCreateInsertMigrationFile(noviceWords, "novice", 800, "may7-novice");
+// getDefsAndCreateInsertMigrationFile(journeymanWords, "journeyman", 1300, "may7-journeyman-v3");
+
+getDefsAndCreateInsertMigrationFile(masterWords, "master", 2900, "may11-master-v3");
+
+// createInsertMigrationFile(definedWords, "may11-expertmaster");

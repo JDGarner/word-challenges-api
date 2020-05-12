@@ -1,102 +1,16 @@
-const noviceWords = [
-  "baby",
-  "able",
-  "bake",
-  "bank",
-  "cage",
-  "cake",
-  "calm",
-  "camp",
-  "camera",
-  "cancel",
-  "candy",
-  "dawn",
-  "dead",
-  "deaf",
-  "deal",
-  "dear",
-  "death",
-  "damp",
-  "dance",
-  "dare",
-  "dark",
-  "data",
-  "date",
-  "early",
-  "earn",
-  "earth",
-  "easy",
-  "edge",
-  "edit",
-];
 
-const journeymanWords = [
-  "deem",
-  "keen",
-  "precious",
-  "villain",
-  "brisk",
-  "bawl",
-  "rampage",
-  "fiancee",
-  "legacy",
-  "hone",
-  "parameter",
-  
-  "abandon",
-  "ability",
-  "abroad",
-  "absent",
-  "absolute",
-  "abstract",
-  "abuse",
-  "abusive",
-  "academic",
-  "accept",
-  "access",
-  "accident",
-  "accompany",
-  "accountant",
-  "accurate",
-  
-  "bachelor",
-  "backhand",
-  "backward",
-  "bacterium",
-  "baggage",
-  "balance",
-  "bandage",
-  "bankruptcy",
-  
-  "calculate",
-  "calendar",
-  "calf",
-  "campaign",
-  "campus",
-  "candidate",
-  "capable",
-  "capacity",
-  "capital",
-  "captain",
-  "capture",
-  "carbon",
-  "daughter",
-
-  "eager",
-  "earlier",
-  "earlobe",
-  "easygoing",
-  "ecology",
-  "economics",
-  "economist",
-  "economy",
-  "ecosystem",
-  "edition",
-
-  
-];
 
 const expertWords = [
+  "domineering",
+  "defiance",
+  "contaminant",
+  "contemporary",
+  "coherent",
+  "carcinogen",
+  "biodiversity",
+  "bibliography",
+  "anguish",
+  "aggravation",
   "precaution",
   "rampant",
   "unsolicited",
@@ -105,11 +19,102 @@ const expertWords = [
   "mitigate",
   "reprimand",
   "dystopia",
-  "utopia"
+  "utopia",
+  "geothermal",
+  "illustrate",
+  "acquit",
+  "adjourn",
+  "litigate",
+  "matriculate",
+  "nevertheless",
+  "notary",
+  "pompous",
+  "precipitation",
+  "prejudice",
+  "premise",
+  "preposition",
+  "prerequisite",
+  "prescribe",
 ];
 
-const masterWords = [];
+apocryphal
+axiom
+baleful
+bastion
+bicker
+chagrin
+broach
+brusque
+cabal
+complicity
+concur
+congeal
+consecrate
+construe
+contrite
+coterie
+debase
+decadence
+defile
+denigrate
+desultory
+disabuse
+embroil
+encumber
+exhume
+extenuate
+flippant
+hedonism
+indubitable
+inexorable
+infallible
+insinuate
+interloper
+malcontent
+neologism
+nonentity
+pallid
+paragon
+patrimony
+pedant
+penance
+privation
+probity
+recalcitrant
+relegate
+reprehensible
+sinecure
+anomaly
+coddle
+swarthy
+luscious
+opportunist
+thwart
+bludgeon
+banter
+dirge
+dross
+dyspeptic
+ensconce
+expurgate
+extrinsic
+interstice
+megalomania
+nihilism
+abdicate
+titular
+dorsal
+defalcate
+drudgery
+emanate
+emetic
+emolument
+
+const masterWords = ["incongruous"];
 
 module.exports = {
-  noviceWords
+  noviceWords,
+  journeymanWords,
+  expertWords,
+  masterWords,
 };
