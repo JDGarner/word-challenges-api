@@ -28,6 +28,6 @@ const getWords = (difficulty) => {
   });
 };
 
-getWords("journeyman");
-getWords("expert");
-getWords("master");
+// getWords("journeyman");
+// getWords("expert");
+// getWords("master");
