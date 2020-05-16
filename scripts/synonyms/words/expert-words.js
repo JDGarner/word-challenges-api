@@ -346,6 +346,8 @@ const expertWords = [
   "swindler",
   "transition",
   "rupture",
+
+
   "rehabilitation",
   "vicinity",
   "wrought",
@@ -719,6 +721,9 @@ const expertWords = [
   "crone",
   "dappled",
   "defection",
+
+
+
   "delusion",
   "demolition",
   "derision",

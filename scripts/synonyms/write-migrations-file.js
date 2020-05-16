@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { journeymanWords } = require("./words/journeyman-words");
+const { expertWords } = require("./words/expert-words");
 const { getSynonymsForWords } = require("./init-synonyms-oxford");
 
 const getEntryStringFromResult = (result) => {
@@ -31,4 +31,4 @@ const getSynsAndCreateInsertMigrationFile = (words, filename) => {
   });
 };
 
-getSynsAndCreateInsertMigrationFile(journeymanWords, "may14-synonyms-journeyman-v4");
+getSynsAndCreateInsertMigrationFile(expertWords, "may16-synonyms-expert-v3");

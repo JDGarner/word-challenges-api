@@ -1,21 +1,23 @@
 const Rhymes = require("../models/rhymes");
 const Definitions = require("../models/definitions");
+const Synonyms = require("../models/synonyms");
 
 const RHYME_RESPONSE_SIZE = 40;
 const DEFINITION_RESPONSE_SIZE = 80;
+const SYNONYM_RESPONSE_SIZE = 70;
 
 const DIFFICULTIES = {
   NOVICE: "novice",
   JOURNEYMAN: "journeyman",
   EXPERT: "expert",
-  MASTER: "master"
+  MASTER: "master",
 };
 
 const DIFFICULTY_ELO_RANGES = {
   [DIFFICULTIES.NOVICE]: { lower: 600, upper: 1000 },
   [DIFFICULTIES.JOURNEYMAN]: { lower: 1000, upper: 1600 },
   [DIFFICULTIES.EXPERT]: { lower: 1600, upper: 2200 },
-  [DIFFICULTIES.MASTER]: { lower: 2200, upper: 3600 }
+  [DIFFICULTIES.MASTER]: { lower: 2200, upper: 3600 },
 };
 
 function getRhymesForDifficulty(difficulty) {
@@ -37,10 +39,10 @@ function getRandomRhymes(req, res, next) {
   const master = getRhymesForDifficulty("master");
 
   Promise.all([novice, journeyman, expert, master])
-    .then(values => {
+    .then((values) => {
       res.json({ novice: values[0], journeyman: values[1], expert: values[2], master: values[3] });
     })
-    .catch(err => {
+    .catch((err) => {
       res.send(err);
     });
 }
@@ -64,10 +66,37 @@ function getRandomDefinitions(req, res, next) {
   const master = getDefinitionsForDifficulty("master");
 
   Promise.all([novice, journeyman, expert, master])
-    .then(values => {
+    .then((values) => {
       res.json({ novice: values[0], journeyman: values[1], expert: values[2], master: values[3] });
     })
-    .catch(err => {
+    .catch((err) => {
+      res.send(err);
+    });
+}
+
+function getSynonymsForDifficulty(difficulty) {
+  return new Promise((resolve, reject) => {
+    Synonyms.aggregate(
+      [{ $match: { difficulty } }, { $sample: { size: SYNONYM_RESPONSE_SIZE } }],
+      (err, synoynms) => {
+        if (err) reject(err);
+        resolve(synoynms);
+      }
+    );
+  });
+}
+
+function getRandomSynonyms(req, res, next) {
+  const novice = getSynonymsForDifficulty("novice");
+  const journeyman = getSynonymsForDifficulty("journeyman");
+  const expert = getSynonymsForDifficulty("expert");
+  const master = getSynonymsForDifficulty("master");
+
+  Promise.all([novice, journeyman, expert, master])
+    .then((values) => {
+      res.json({ novice: values[0], journeyman: values[1], expert: values[2], master: values[3] });
+    })
+    .catch((err) => {
       res.send(err);
     });
 }
@@ -80,7 +109,7 @@ function setDefinitionELO(req, res, next) {
       res.send(err);
     } else {
       const newELO = getActualNewELO(elo, result.difficulty);
-      Definitions.updateOne({ word }, { $set: { eloRating: newELO } }, err => {
+      Definitions.updateOne({ word }, { $set: { eloRating: newELO } }, (err) => {
         if (err) {
           res.send(err);
         } else {
@@ -113,7 +142,26 @@ function setRhymeELO(req, res, next) {
       res.send(err);
     } else {
       const newELO = getActualNewELO(elo, result.difficulty);
-      Rhymes.updateOne({ word }, { $set: { eloRating: newELO } }, err => {
+      Rhymes.updateOne({ word }, { $set: { eloRating: newELO } }, (err) => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.sendStatus(200);
+        }
+      });
+    }
+  });
+}
+
+function setSynonymELO(req, res, next) {
+  const { word, elo } = req.body;
+
+  Synonyms.findOne({ word }, (err, result) => {
+    if (err) {
+      res.send(err);
+    } else {
+      const newELO = getActualNewELO(elo, result.difficulty);
+      Synonyms.updateOne({ word }, { $set: { eloRating: newELO } }, (err) => {
         if (err) {
           res.send(err);
         } else {
@@ -126,7 +174,9 @@ function setRhymeELO(req, res, next) {
 
 module.exports = {
   getRandomRhymes: getRandomRhymes,
+  setRhymeELO: setRhymeELO,
   getRandomDefinitions: getRandomDefinitions,
   setDefinitionELO: setDefinitionELO,
-  setRhymeELO: setRhymeELO
+  getRandomSynonyms: getRandomSynonyms,
+  setSynonymELO: setSynonymELO,
 };
