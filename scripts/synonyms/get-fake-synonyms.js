@@ -13,7 +13,7 @@ const getAllPossibleWords = () => {
     const db = client.db(DB);
   
     db.collection("synonyms")
-      .find({ $or: [ { difficulty: "novice" }, { difficulty: "journeyman" } ] })
+      .find({ $or: [ { difficulty: "expert" }, { difficulty: "master" } ] })
       .toArray((err, results) => {
         if (err) throw err;
         console.log(results);
@@ -27,7 +27,7 @@ const getAllPossibleWords = () => {
         const allWords = uniq([...words, ...synonyms]);
         const fileContent = allWords.join(">>> \n")
   
-        fs.writeFile(`scripts/synonyms/words/potential-fake-easy-words`, fileContent, function (err) {
+        fs.writeFile(`scripts/synonyms/words/potential-fake-hard-words`, fileContent, function (err) {
           if (err) throw err;
           console.log("Success!");
         });
