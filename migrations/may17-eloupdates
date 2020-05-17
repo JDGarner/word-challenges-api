@@ -1,0 +1,11 @@
+use words_dev
+
+db.definitions.updateMany({ difficulty: "master" }, { $set: { eloRating: 2400 } })
+db.rhymes.updateMany({ difficulty: "master" }, { $set: { eloRating: 2400 } })
+db.synonyms.updateMany({ difficulty: "master" }, { $set: { eloRating: 2400 } })
+
+use words_prod
+
+db.definitions.updateMany({ difficulty: "master" }, { $set: { eloRating: 2400 } })
+db.rhymes.updateMany({ difficulty: "master" }, { $set: { eloRating: 2400 } })
+db.synonyms.updateMany({ difficulty: "master" }, { $set: { eloRating: 2400 } })
