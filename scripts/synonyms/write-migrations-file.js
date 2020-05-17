@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { expertWords } = require("./words/expert-words");
+const { masterWords } = require("./words/master-words");
 const { getSynonymsForWords } = require("./init-synonyms-oxford");
 
 const getEntryStringFromResult = (result) => {
@@ -31,4 +31,4 @@ const getSynsAndCreateInsertMigrationFile = (words, filename) => {
   });
 };
 
-getSynsAndCreateInsertMigrationFile(expertWords, "may16-synonyms-expert-v3");
+getSynsAndCreateInsertMigrationFile(masterWords, "may16-synonyms-master-v2");
