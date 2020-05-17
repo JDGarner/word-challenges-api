@@ -1,0 +1,13 @@
+use words_dev
+
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "novice" } ] })
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "journeyman" } ] })
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "expert" } ] })
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "master" } ] })
+
+use words_prod
+
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "novice" } ] })
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "journeyman" } ] })
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "expert" } ] })
+db.synonyms.remove({ "$and": [ { "synonyms": { "$exists": false } }, { "difficulty": "master" } ] })
