@@ -1,0 +1,9 @@
+{
+    "aps": {
+        "alert": {
+          "title": "Good Morning",
+          "body": "How about some synonym practice today? :)",
+        }
+    },
+    "mode": "SYNONYMS",
+}

@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/develop.js",
-    "start": "node src/develop.js"
+    "start": "node src/develop.js",
+    "pushnotif": "xcrun simctl push 8B042537-F600-40D2-ABDA-594469ACA79D com.jamiegarner.WordChallenges src/push-notifications/ios/ExamplePush.apns"
   },
   "engines": {
     "node": "12.x"
@@ -21,6 +22,7 @@
     "lodash": "^4.17.15",
     "mongodb": "^3.5.2",
     "mongoose": "^5.7.5",
+    "node-cron": "^2.0.3",
     "pg": "^7.12.0"
   }
 }

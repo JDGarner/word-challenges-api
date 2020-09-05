@@ -1,3 +1,15 @@
+For Push Notifications:
+- Handle storing and getting device tokens in the DB (do FE first?)
+- Make the cron jobs run once every nine days (one every three days in total)
+- Make this run as a pm2 process on server
+- Add environment variables to server APPLE_PUSH_KEY_ID, APPLE_TEAM_ID, NODE_ENV
+
+
+
+
+
+
+
 - how to monitor server response times/load? how to load test?
 - upgrade server before release?
 

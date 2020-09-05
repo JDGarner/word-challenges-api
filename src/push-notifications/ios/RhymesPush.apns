@@ -1,0 +1,9 @@
+{
+    "aps": {
+        "alert": {
+          "title": "Good Morning",
+          "body": "How about some rhyming practice today? :)",
+        }
+    },
+    "mode": "RHYMES",
+}
