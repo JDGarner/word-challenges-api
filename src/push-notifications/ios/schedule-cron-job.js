@@ -1,3 +1,4 @@
+require("dotenv").config();
 const cron = require("node-cron");
 const { sendPushNotification } = require("./send");
 const { DEFINITIONS, SYNONYMS, RHYMES } = require("../../../constants");
