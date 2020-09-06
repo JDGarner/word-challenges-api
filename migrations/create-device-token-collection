@@ -1,0 +1,5 @@
+use words_dev
+db.createCollection("iosdevicetokens")
+
+use words_prod
+db.createCollection("iosdevicetokens")

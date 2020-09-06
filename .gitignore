@@ -3,4 +3,4 @@ dump/
 scripts/definitions/init-definitions-oxford.js
 scripts/synonyms/init-synonyms-oxford.js
 .env
-ecosystem.config.js
+keys/
