@@ -2,6 +2,7 @@ const { IS_PROD } = require("../../../constants");
 const { exec } = require("child_process");
 const { capitalize } = require("lodash");
 const { createAPNNotification } = require("./notifications");
+const iosDeviceTokens = require("../../models/iosdevicetokens");
 
 const sendPushNotification = (apnProvider, mode) => {
   if (IS_PROD) {
@@ -11,23 +12,28 @@ const sendPushNotification = (apnProvider, mode) => {
   }
 };
 
-const sendPushNotificationViaAPN = (apnProvider, mode) => {
+const sendPushNotificationViaAPN = async (apnProvider, mode) => {
   const notification = createAPNNotification(mode);
 
-  // TODO: Get all device tokens from DB
-  const deviceTokens = ["123"];
+  try {
+    const deviceTokens = await iosDeviceTokens.find();
+    const tokens = deviceTokens.map((dt) => dt.token);
 
-  apnProvider.send(notification, deviceTokens).then((response) => {
-    console.log(
-      "Notification SUCCESSFULLY sent to the following device tokens: ",
-      response.sent
-    );
-
-    console.log(
-      "Notification FAILED to send to the following device tokens: ",
-      response.failed
-    );
-  });
+    if (tokens && tokens.length > 0) {
+      apnProvider.send(notification, deviceTokens).then((response) => {
+        console.log(
+          "Notification SUCCESSFULLY sent to the following device tokens: ",
+          response.sent
+        );
+        console.log(
+          "Notification FAILED to send to the following device tokens: ",
+          response.failed
+        );
+      });
+    }
+  } catch (e) {
+    console.error(e);
+  }
 };
 
 const sendPushNotificationToSimulator = (mode) => {

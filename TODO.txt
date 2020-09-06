@@ -1,10 +1,8 @@
 For Push Notifications:
-- update ecosystem file on master on server
-- Add environment variables to server APPLE_PUSH_KEY_ID, APPLE_TEAM_ID, NODE_ENV
-- Add AuthKey to server
 - Make the cron jobs run once every nine days (one every three days in total)
 - Make this run as a pm2 process on server
-
+- fe fix no back button on iOS on retry screen?
+- android push notifs
 
 
 
