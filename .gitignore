@@ -3,5 +3,4 @@ dump/
 scripts/definitions/init-definitions-oxford.js
 scripts/synonyms/init-synonyms-oxford.js
 .env
-src/push-notifications/keys.js
 keys/
