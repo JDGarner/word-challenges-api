@@ -13,14 +13,14 @@ const { apnProvider } = require("./apn");
     useUnifiedTopology: true,
   });
 
-  // At 09:30 on Sunday
-  cron.schedule("30 9 * * 0", () =>
+  // At 10:30 on Sunday
+  cron.schedule("30 10 * * 0", () =>
     sendPushNotification(apnProvider, DEFINITIONS)
   );
 
-  // At 09:30 on Tuesday
-  cron.schedule("30 9 * * 2", () => sendPushNotification(apnProvider, SYNONYMS));
+  // At 10:30 on Tuesday
+  cron.schedule("30 10 * * 2", () => sendPushNotification(apnProvider, SYNONYMS));
 
-  // At 09:30 on Friday
-  cron.schedule("30 9 * * 5", () => sendPushNotification(apnProvider, RHYMES));
+  // At 10:30 on Friday
+  cron.schedule("30 10 * * 5", () => sendPushNotification(apnProvider, RHYMES));
 })();

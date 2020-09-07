@@ -1,7 +1,7 @@
 For Push Notifications:
-- Make this run as a pm2 process on server
-- fe fix no back button on iOS on retry screen?
 - android push notifs
+- fe fix no back button on iOS on retry screen?
+
 
 
 
