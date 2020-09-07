@@ -6,8 +6,10 @@ const iosDeviceTokens = require("../../models/iosdevicetokens");
 
 const sendPushNotification = (apnProvider, mode) => {
   if (IS_PROD) {
+    console.log("Sending Push Notification via APN for ", mode);
     sendPushNotificationViaAPN(apnProvider, mode);
   } else {
+    console.log("Sending Push Notification to simulator for ", mode);
     sendPushNotificationToSimulator(mode);
   }
 };
@@ -30,6 +32,8 @@ const sendPushNotificationViaAPN = async (apnProvider, mode) => {
           response.failed
         );
       });
+    } else {
+      console.log("No device tokens found");
     }
   } catch (e) {
     console.error(e);

@@ -1,5 +1,4 @@
 For Push Notifications:
-- Make the cron jobs run once every nine days (one every three days in total)
 - Make this run as a pm2 process on server
 - fe fix no back button on iOS on retry screen?
 - android push notifs
