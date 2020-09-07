@@ -34,8 +34,6 @@ const startServer = (rootPath, port, dbUri) => {
     if (error) throw error;
     console.log("Server running on PORT " + port);
   });
-
-  // TODO: init APN
 };
 
 module.exports = { startServer };
