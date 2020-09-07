@@ -22,9 +22,12 @@ const startServer = (rootPath, port, dbUri) => {
   });
 
   app.use(function (req, res, next) {
+    console.log("Checking API KEY");
     if (req.headers.authorization !== process.env.WORDS_API_KEY) {
+      console.log("API KEY incorrect");
       return res.status(403).json({ error: "403 Forbidden" });
     }
+    console.log("API KEY correct");
     next();
   });
 

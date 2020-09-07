@@ -1,5 +1,7 @@
 For Push Notifications:
 - android push notifs
+
+- When i have an iOS device to test on - test push notificaitons, then release update
 - fe fix no back button on iOS on retry screen?
 
 

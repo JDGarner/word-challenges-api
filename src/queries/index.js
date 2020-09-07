@@ -69,6 +69,7 @@ function getDefinitionsForDifficulty(difficulty) {
 }
 
 function getRandomDefinitions(req, res, next) {
+  console.log("ENDPOINT CALLED: /definitions");
   const novice = getDefinitionsForDifficulty("novice");
   const journeyman = getDefinitionsForDifficulty("journeyman");
   const expert = getDefinitionsForDifficulty("expert");
